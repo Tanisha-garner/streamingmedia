@@ -1,0 +1,601 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* MENU */
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+
+/* SMALL SCREEN */
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    } 
+
+    #columnscontainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;   
+    }
+
+    
+    
+      
+}
+
+/* MEDIUM SCREEN */
+@media screen and (max-width: 375px) {
+    
+    #columnscontainer{
+        display: grid;
+        grid-template-columns: 1fr; 
+    }
+
+
+  
+}
+
+
+
+
+/* HTML STYLES */
+html {
+    background-color: #020659;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 375px;
+    max-width: 834px;
+    background-color: white;
+    line-height: 1;
+}
+
+/* HEADER, FOOTER & NAV STYLES */
+header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    background-image:linear-gradient(to left, #0a0c37, blue);
+}
+
+main{
+    background-color: #ffffff;
+    max-height: 100%;
+}
+
+footer{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+footer > p{
+    padding-top: 10px;
+    color: #590242;
+    text-align: center;
+}
+
+#muzak{
+    position: absolute fixed;
+    font-size: 1.25em;
+    font-weight: bolder;
+}
+
+
+nav ul{
+    color: white;
+    text-align: center;
+
+}
+nav a{
+    margin-bottom: 20px;
+    margin:25px;
+    text-decoration: none;
+    color: white;
+    
+}
+nav li{
+    list-style-type: none;
+    text-transform: capitalize;
+    margin-top: 10px;
+
+}
+
+article {
+    display: grid;
+    background-image:linear-gradient(to right, #030ABC, black);
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+
+
+
+
+/* TRENDING STYLES*/
+
+#trending > h2{
+    line-height: 3em;
+    margin-left: 25px;
+    font-weight: bolder;
+}
+
+/* SCROLL STYLES
+TRENDING SONGS*/
+
+.scroll{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scroll section{
+    margin: 10px;
+    position: relative;
+}
+
+.scroll div{
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+
+
+
+
+/* SIDE BY SIDE COLUMNS STYLES */
+
+/* #columnscontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   
+}
+*/
+
+
+/* ALL PLAYLISTS STYLES */
+ #playlistscontainer > h2{
+     line-height: 1em;
+     margin-left: 25px;
+     position: relative; 
+     top: -20px;
+     font-weight: bolder;
+ }
+
+ .best_2020{
+    background-color: #2699fb;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.best_2020 > a{
+    text-decoration: none;
+    padding-bottom: 10px;
+}
+.best_2020 > a{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.pumpkin_spice{
+    background-color: #2699fb;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.pumpkin_spice > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.quiet_storm{
+    background-color: #2699fb;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.quiet_storm > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.smooth_jazzsec{
+    background-color: #2699fb;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.smooth_jazzsec > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+}
+
+.smooth_study{
+    background-color: #2699fb;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.smooth_study > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+/* SCROLL STYLES
+ALL PLAYLISTS CONTENT CONTAINER*/
+.scroll2{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #0D8DFB;
+    overflow-x: auto;
+    height: 33em;
+}
+
+.scroll2 section{
+    margin: 10px;
+    position: relative;
+}
+
+.scroll2 div{
+    position: absolute;
+    top: 251px;
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+
+
+
+
+/* CURATED STYLES */
+#curatedcontainer > h2{
+    line-height: 1em;
+    margin-left: 25px;
+    position: relative; 
+    top: -20px;
+    font-weight: bolder;
+}
+
+.boozy_brunch{
+    background-color: #030A8C;
+    border-radius: 5px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.boozy_brunch > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.dinner{
+    background-color: #030A8C;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.dinner > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.mellow{
+    background-color: #030A8C;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.mellow > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.jazz{
+    background-color: #030A8C;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.jazz > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+.smoothsax{
+    background-color: #030A8C;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.smoothsax > h3{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1em;
+    padding-bottom: 10px;
+
+}
+
+/* SCROLL STYLES
+CURATED PLAYLISTS CONTENT CONTAINER*/
+.scroll3{
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: #020873;
+    overflow-x: auto;
+    height: 33em;  
+}
+
+.scroll3 section{
+    margin: 10px;
+    position: relative;
+    
+}
+
+.scroll3 div{
+    position: absolute;
+    top: 251px;
+    padding: 5px;
+    height: 50px;
+    width: 350px;  
+}
+
+/* SCROLL-BAR STYLES
+TRENDING SONGS*/
+#trending ::-webkit-scrollbar {
+    box-shadow: inset 0 0 15px #590242;
+}
+#trending ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 15px #590242;   
+}
+#trending ::-webkit-scrollbar-thumb {
+    background: #590242;
+    border-radius: 5px;
+}
+#trending ::-webkit-scrollbar-thumb:hover {
+    background: #020659;
+}
+/* SCROLL-BAR STYLES
+ALL PLAYLISTS/CURATED*/
+#playlistscontainer ::-webkit-scrollbar, #curatedcontainer ::-webkit-scrollbar {
+    width: 15px;
+}
+
+#playlistscontainer ::-webkit-scrollbar-track, #curatedcontainer ::-webkit-scrollbar-track  {
+    box-shadow: inset 0 0 15px #020659;
+}
+
+#playlistscontainer ::-webkit-scrollbar-thumb, #curatedcontainer ::-webkit-scrollbar-thumb {
+    background: #020659;
+    border-radius: 5px;
+}
+
+#playlistscontainer ::-webkit-scrollbar-thumb:hover, #curatedcontainer ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+
+/*  BUTTON STYLES*/
+.button1, .button2, .button3 {
+    background-color:#590242 ;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.button1{
+    margin-left: 50em;
+    margin-bottom: 4em;
+}
+.button2{
+    margin-left: 17em;
+}
+.button3{
+    float: right;
+    margin-right: 20px;
+}
+
+.button1:hover {
+    background-color: #020659;}
+    .button2:hover {
+        background-color: #020659;}
+        .button3:hover {
+            background-color: #020659;}
+
+
+/* AUDIO STYLING */
+audio{
+   position: absolute;
+   bottom: 150px;
+   left: 5px;
+}
+
+audio::-webkit-media-controls-mute-button {
+
+}
+audio::-webkit-media-controls-play-button {
+
+}
+audio::-webkit-media-controls-enclosure {
+
+
+}
+
+/* TEXT STYLES */
+h1 {
+    font-size:1.25em;
+}
+
+h2, h3 {
+    font-size: 1em;
+    color: #590242;
+}
+
+p, dl, dd, dt {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+article {
+    color: white;
+}
+
+footer p {
+    font-size: .75em;
+}
+
+footer{
+    background-color: #ffffff;
+}
+
+.smooth_jazz{
+    padding-top: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
