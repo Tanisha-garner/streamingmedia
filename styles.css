@@ -103,45 +103,6 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     top: 0;
 }
 
-
-/* SMALL SCREEN */
-@media screen and (min-width:834px) {
-    ul {
-        overflow: visible;
-        position: absolute;
-        top: 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-    label span, input {
-        display: none;
-    } 
-
-    #columnscontainer{
-        display: grid;
-        grid-template-columns: 1fr 1fr;   
-    }
-
-    
-    
-      
-}
-
-/* MEDIUM SCREEN */
-@media screen and (max-width: 375px) {
-    
-    #columnscontainer{
-        display: grid;
-        grid-template-columns: 1fr; 
-    }
-
-
-  
-}
-
-
-
-
 /* HTML STYLES */
 html {
     background-color: #020659;
@@ -179,11 +140,11 @@ footer > p{
 }
 
 #muzak{
-    position: absolute fixed;
+    position: relative;
+
     font-size: 1.25em;
     font-weight: bolder;
 }
-
 
 nav ul{
     color: white;
@@ -248,18 +209,6 @@ TRENDING SONGS*/
 }
 
 
-
-
-
-/* SIDE BY SIDE COLUMNS STYLES */
-
-/* #columnscontainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;   
-}
-*/
-
-
 /* ALL PLAYLISTS STYLES */
  #playlistscontainer > h2{
      line-height: 1em;
@@ -278,14 +227,13 @@ TRENDING SONGS*/
     margin-bottom: 20px;
     text-decoration: none;
 }
-.best_2020 > a{
-    text-decoration: none;
-    padding-bottom: 10px;
-}
+
 .best_2020 > a{
     color: #ffffff;
     font-weight: bold;
     font-size: 1em;
+    padding-bottom: 10px;
+    text-decoration: none;
     padding-bottom: 10px;
 
 }
@@ -347,22 +295,48 @@ TRENDING SONGS*/
 
 /* SCROLL STYLES
 ALL PLAYLISTS CONTENT CONTAINER*/
+
 .scroll2{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     background-color: #0D8DFB;
-    overflow-x: auto;
-    height: 33em;
+    overflow-y: auto;
+    height: 18em; 
 }
 
 .scroll2 section{
     margin: 10px;
     position: relative;
 }
-
 .scroll2 div{
     position: absolute;
     top: 251px;
+    background-color: rgba(255,255,255,.75);
+    padding: 5px;
+    height: 50px;
+    width: 350px;
+}
+
+/* SCROLL STYLES
+CURATED PLAYLISTS CONTENT CONTAINER*/
+
+.scroll3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: #020873;
+    overflow-y: auto;
+    height: 18em; 
+}
+
+.scroll3 section{
+    margin: 10px;
+    position: relative;   
+}
+
+.scroll3 div{
+    position: absolute;
+    top: 251px;
+    background-color: rgba(255,255,255,.75);
     padding: 5px;
     height: 50px;
     width: 350px;
@@ -373,6 +347,7 @@ ALL PLAYLISTS CONTENT CONTAINER*/
 
 
 /* CURATED STYLES */
+
 #curatedcontainer > h2{
     line-height: 1em;
     margin-left: 25px;
@@ -457,29 +432,6 @@ ALL PLAYLISTS CONTENT CONTAINER*/
 
 }
 
-/* SCROLL STYLES
-CURATED PLAYLISTS CONTENT CONTAINER*/
-.scroll3{
-    display: grid;
-    grid-template-columns: 1fr;
-    background-color: #020873;
-    overflow-x: auto;
-    height: 33em;  
-}
-
-.scroll3 section{
-    margin: 10px;
-    position: relative;
-    
-}
-
-.scroll3 div{
-    position: absolute;
-    top: 251px;
-    padding: 5px;
-    height: 50px;
-    width: 350px;  
-}
 
 /* SCROLL-BAR STYLES
 TRENDING SONGS*/
@@ -530,7 +482,7 @@ ALL PLAYLISTS/CURATED*/
 }
 
 .button1{
-    margin-left: 50em;
+    margin-left: 40em;
     margin-bottom: 4em;
 }
 .button2{
@@ -543,10 +495,10 @@ ALL PLAYLISTS/CURATED*/
 
 .button1:hover {
     background-color: #020659;}
-    .button2:hover {
-        background-color: #020659;}
-        .button3:hover {
-            background-color: #020659;}
+.button2:hover {
+    background-color: #020659;}
+.button3:hover {
+    background-color: #020659;}
 
 
 /* AUDIO STYLING */
@@ -556,16 +508,6 @@ audio{
    left: 5px;
 }
 
-audio::-webkit-media-controls-mute-button {
-
-}
-audio::-webkit-media-controls-play-button {
-
-}
-audio::-webkit-media-controls-enclosure {
-
-
-}
 
 /* TEXT STYLES */
 h1 {
@@ -598,4 +540,89 @@ footer{
     padding-top: 15px;
     font-weight: bold;
     padding-bottom: 10px;
+}
+
+
+
+/* MEDIUM SCREEN MEDIA QUERY */
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    } 
+/* COLUMNS CONTAINER GRID*/
+    #columnscontainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100% 
+    }
+
+    body{
+        max-width: 834px;
+    }
+/* TRENDING STYLES */
+    .scroll{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    
+    .scroll section{
+        margin: 10px;
+        position: relative;
+    }
+    
+    .scroll div{
+        position: absolute;
+        top: 251px;
+        background-color: rgba(255,255,255,.75);
+        padding: 5px;
+        height: 50px;
+        width: 350px;
+    }
+
+/* YOUR PLAYLISTS STYLES */
+    .scroll2{
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-x: auto;
+        height: 33em;
+
+    }
+
+    .scroll2 div{
+        position: absolute;
+        top: 251px;
+        padding: 5px;
+        height: 50px;
+        width: 350px;
+    }
+  
+
+/* CURATED STYLES */
+    .scroll3{
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-x: auto;
+        height: 33em; 
+    }
+
+    .scroll3 div{
+        position: absolute;
+        top: 251px;
+        padding: 5px;
+        height: 50px;
+        width: 350px;
+    }
+
+
+
+
 }
