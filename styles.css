@@ -142,7 +142,6 @@ footer > p{
 #muzak{
     position: absolute;
     top: 0;
-    left: center;
     padding-bottom: 5em;
     font-size: 1.25em;
     font-weight: bolder;
@@ -187,6 +186,16 @@ h2, h3 {
 p, dl, dd, dt {
     font-size: 1em;
     color: #ffffff;
+}
+
+h3{
+    font-weight: bold;
+}
+
+dd, dt{
+    color: #590242;
+    font-style: italic;
+    display: inline-block;
 }
 
 article {
@@ -265,13 +274,11 @@ TRENDING SONGS*/
 }
 
 .best_2020 > a{
-    color: #ffffff;
-    font-weight: bold;
+    text-decoration: none;
     font-size: 1em;
     padding-bottom: 10px;
     text-decoration: none;
     padding-bottom: 10px;
-
 }
 
 .pumpkin_spice{
@@ -508,13 +515,15 @@ ALL PLAYLISTS/CURATED*/
 .button1, .button2, .button3 {
     background-color:#590242 ;
     color: white;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    
+    
 }
 
 .button1{
@@ -540,6 +549,19 @@ audio{
    position: absolute;
    bottom: 150px;
    left: 5px;
+   opacity: 60%;
+}
+/*
+audio::-webkit-media-controls-mute-button {
+
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: transparent;
+}
+
+audio::-webkit-media-controls-enclosure {
+
 }
 
 
